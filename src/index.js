@@ -1,3 +1,8 @@
+// This module is in charge of creating the Todo objects and Project objects.
+console.log("--index.js is running.");
+
+import { printTest } from "./display.js";
+
 function todo(title, desc, dueDate, priority) {
     this.title = title;
     this.desc = desc;
