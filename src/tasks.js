@@ -2,14 +2,14 @@
 console.log("--tasks.js is running.");
 
 
-function todo(title, desc, dueDate, priority) {
+export function todo(title, desc, dueDate, priority) {
     this.title = title;
     this.desc = desc;
     this.dueDate = dueDate;
     this.priority = priority;
 }
 
-function project(title, desc) {
+export function project(title, desc) {
     this.title = title;
     this.desc = desc;
     this.todoList = [];

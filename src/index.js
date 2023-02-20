@@ -10,16 +10,26 @@ const content = document.getElementById("content");
     projSection.classList.add("projSection");
     content.appendChild(projSection);
 
-    const newProj = document.createElement("button");
-    newProj.classList.add("newProjBtn");
-    newProj.addEventListener("click", () => {
-        // const project1 = new project("todolist today", "weekend stuff");
-        
+    // Create button that makes project objects
+    const newProjBtn = document.createElement("button");
+    newProjBtn.classList.add("newProjBtn");
+    newProjBtn.addEventListener("click", () => {
+        // Create project object and it's corresponding display.
+        const project1 = new project("todolist today", "weekend stuff");
         const projBox = document.createElement("div");
-        // projBox.appendChild(document.createElement("h1").innerHTML = project1.title);
+        const title = document.createElement("h5");
+        const desc = document.createElement("h6");
+        title.textContent = project1.title;
+        desc.textContent = project1.desc;
+        projBox.appendChild(title);
+        projBox.appendChild(desc);
+        // Append project to the section
         projSection.appendChild(projBox);
     });
-    projSection.appendChild(newProj);
+    projSection.appendChild(newProjBtn);
+
+    // ######## TO DO: Show a form on the button click and get the project object's values from there
+    // ######## OR ALTERNATIVELY: Implement the same basic logic for the todolist section
     
 // Todo Section
     const todoSection = document.createElement("div");
