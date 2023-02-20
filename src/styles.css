@@ -18,6 +18,15 @@ body #content .projSection {
   background-color: greenyellow;
   grid-column: 1/2;
 }
+body #content .projSection .newProjBtn {
+  height: 50px;
+  width: 100px;
+}
+body #content .projSection div {
+  border: 1px solid black;
+  height: 100px;
+  width: 100px;
+}
 body #content .todoSection {
   background-color: blue;
   grid-column: 2/5;

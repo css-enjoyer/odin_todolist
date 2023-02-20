@@ -9,6 +9,17 @@ const content = document.getElementById("content");
     const projSection = document.createElement("div");
     projSection.classList.add("projSection");
     content.appendChild(projSection);
+
+    const newProj = document.createElement("button");
+    newProj.classList.add("newProjBtn");
+    newProj.addEventListener("click", () => {
+        // const project1 = new project("todolist today", "weekend stuff");
+        
+        const projBox = document.createElement("div");
+        // projBox.appendChild(document.createElement("h1").innerHTML = project1.title);
+        projSection.appendChild(projBox);
+    });
+    projSection.appendChild(newProj);
     
 // Todo Section
     const todoSection = document.createElement("div");

@@ -16,6 +16,15 @@ body {
         .projSection {
             background-color: greenyellow;
             grid-column: 1 / 2;
+            .newProjBtn {
+                height: 50px;
+                width: 100px;
+            }
+            div {
+                border: 1px solid black;
+                height: 100px; 
+                width: 100px;
+            }
         }
         .todoSection {
             background-color: blue;
