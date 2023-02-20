@@ -2,4 +2,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+}
+body #content {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: "100px 300px";
+}
+body #content .projSection {
+  background-color: greenyellow;
+  grid-column: 1/2;
+}
+body #content .todoSection {
+  background-color: blue;
+  grid-column: 2/5;
 }/*# sourceMappingURL=styles.css.map */
