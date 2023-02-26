@@ -12,6 +12,7 @@ const content = document.getElementById("content");
 
     // Create button that makes project objects
     const newProjBtn = document.createElement("button");
+    newProjBtn.innerText = "New Project";
     newProjBtn.classList.add("newProjBtn");
     newProjBtn.addEventListener("click", () => {
         // Create project object and it's corresponding display.
