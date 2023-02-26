@@ -2,7 +2,7 @@
 console.log("--index.js is running.");
 
 import { todo, project } from "./tasks.js";
-// import { displayTodo, displayProject } from "./display.js";
+import { displayProject } from "./todo.js";
 
 const content = document.getElementById("content");
 // Project Section
@@ -16,7 +16,7 @@ const content = document.getElementById("content");
     newProjBtn.classList.add("newProjBtn");
     newProjBtn.addEventListener("click", () => {
         // Create project object and it's corresponding display.
-        const project1 = new project("todolist today", "weekend stuff");
+        const project1 = new project("New Project", "project description...");
         const projBox = document.createElement("div");
         const title = document.createElement("h5");
         const desc = document.createElement("h6");
@@ -26,6 +26,8 @@ const content = document.getElementById("content");
         projBox.appendChild(desc);
         // Append project to the section
         projSection.appendChild(projBox);
+
+        displayProject(project1);
     });
     projSection.appendChild(newProjBtn);
 
@@ -33,8 +35,7 @@ const content = document.getElementById("content");
     // ######## OR ALTERNATIVELY: Implement the same basic logic for the todolist section
     
 // Todo Section
-    const todoSection = document.createElement("div");
-    todoSection.classList.add("todoSection");
-    content.appendChild(todoSection);
-
+export const todoSection = document.createElement("div");
+todoSection.classList.add("todoSection");
+content.appendChild(todoSection);
 

@@ -26,10 +26,13 @@ body #content .projSection .newProjBtn {
 }
 body #content .projSection div {
   border: 1px solid black;
-  height: 100px;
+  height: 60px;
   width: 100%;
 }
 body #content .todoSection {
   background-color: blue;
   grid-column: 2/8;
+}
+body #content .todoSection .newTdBtn {
+  border: 1px solid white;
 }/*# sourceMappingURL=styles.css.map */

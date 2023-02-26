@@ -24,13 +24,16 @@ body {
             }
             div {
                 border: 1px solid black;
-                height: 100px; 
+                height: 60px; 
                 width: 100%;
             }
         }
         .todoSection {
             background-color: blue;
             grid-column: 2 / 8;
+            .newTdBtn {
+                border: 1px solid white;
+            }
         }
     }
     
