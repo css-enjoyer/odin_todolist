@@ -22,15 +22,10 @@ body {
                 border: none;
                 cursor: pointer;
             }
-            div {
-                border: 1px solid black;
-                height: 60px; 
-                width: 100%;
-            }
         }
         .todoSection {
             background-color: blue;
-            grid-column: 2 / 8;
+            grid-column: 2 / 6;
             .newTdBtn {
                 border: 1px solid white;
             }
