@@ -30,6 +30,9 @@ export function project(title, desc) {
     this.setTitle = function(newTitle) {
         this.title = newTitle;
     }
+    this.setDesc = function(newDesc) {
+        this.desc = newDesc;
+    }
 }
 
 // const todo1 = new todo("Buy item", "Milk", "2023-02-20", "medium");

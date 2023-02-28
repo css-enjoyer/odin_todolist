@@ -34,11 +34,32 @@ export function displayProject(project) {
         input.focus();
     });
 
-
     const desc = document.createElement("h4");
     desc.classList.add("desc");
     desc.textContent = project.desc;
     projContent.appendChild(desc);
+    desc.addEventListener("click", () => {
+        const oldText = desc.innerText;
+        const input = document.createElement("input");
+        input.type = "text";
+        input.value = oldText;
+
+        desc.innerText = "";
+        desc.appendChild(input);
+
+        input.addEventListener("blur", () => {
+            if(input.value.trim() === "") {
+                desc.innerText = "Untitled Project";
+                project.setDesc(desc.innerText);
+                desc.focus();
+            } else {
+                desc.innerText = input.value;
+                project.setDesc(input.value);
+            }
+            listProjects();
+        });
+        input.focus();
+    });
 
     return projContent;
 }
