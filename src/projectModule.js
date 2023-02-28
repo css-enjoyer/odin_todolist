@@ -1,4 +1,21 @@
+console.log("projectModule.js");
 
+export function displayProject(project) {
+    const projContent = document.createElement("div");
+    projContent.classList.add("projContent");
+    content.appendChild(projContent);
+
+    const title = document.createElement("h1");
+    title.classList.add("title");
+    title.textContent = project.title;
+    projContent.appendChild(title);
+
+    const desc = document.createElement("h4");
+    desc.classList.add("desc");
+    title.textContent = project.desc;
+    projContent.appendChild(desc);
+
+}
 
 
 
