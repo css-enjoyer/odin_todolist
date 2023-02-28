@@ -27,6 +27,9 @@ export function project(title, desc) {
             console.log(todo);
         });
     }
+    this.setTitle = function(newTitle) {
+        this.title = newTitle;
+    }
 }
 
 // const todo1 = new todo("Buy item", "Milk", "2023-02-20", "medium");

@@ -30,16 +30,16 @@ content.appendChild(projSection);
     });
     projSection.appendChild(newProjBtn);
     // List each project in array ------------------------------------------ 
-    function listProjects() {
+    export function listProjects() {
         projSection.innerHTML = "";
         projects.forEach(project => {
             const pBox = document.createElement("div");
             pBox.classList.add("pBox");
             projSection.appendChild(pBox);
-            pBox.textContent = "Test";
+            pBox.textContent = project.title;
             pBox.addEventListener("click", () => {
-                // Display project on click
-                console.log("Clicked! Displaying project...");
+                todoSection.innerHTML = "";
+                displayProject(project);
             });
         });
         projSection.appendChild(newProjBtn);

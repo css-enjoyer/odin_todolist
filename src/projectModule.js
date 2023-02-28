@@ -1,6 +1,6 @@
-console.log("projectModule.js");
+console.log("--projectModule.js is running.");
 
-import { todoSection } from "./index.js";
+import { todoSection, listProjects } from "./index.js";
 
 export function displayProject(project) {
     const projContent = document.createElement("div");
@@ -11,10 +11,27 @@ export function displayProject(project) {
     title.classList.add("title");
     title.textContent = project.title;
     projContent.appendChild(title);
+    title.addEventListener("click", () => {
+        const text = title.innerText;
+        const input = document.createElement("input");
+        input.type = "text";
+        input.value = text;
+
+        title.innerText = "";
+        title.appendChild(input);
+
+        input.addEventListener("blur", () => {
+            title.innerText = input.value;
+            project.setTitle(input.value);
+            listProjects();
+        });
+        input.focus();
+    });
+
 
     const desc = document.createElement("h4");
     desc.classList.add("desc");
-    title.textContent = project.desc;
+    desc.textContent = project.desc;
     projContent.appendChild(desc);
 
     return projContent;
