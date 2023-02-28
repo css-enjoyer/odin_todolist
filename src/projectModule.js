@@ -14,7 +14,6 @@ export function displayProject(project) {
     title.addEventListener("click", () => {
         const oldText = title.innerText;
         const input = document.createElement("input");
-        input.style.userSelect = "none";
         input.type = "text";
         input.value = oldText;
 
