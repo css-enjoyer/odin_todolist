@@ -6,39 +6,45 @@ import { todo, project } from "./projAndTodoClass.js";
 // ------------- Body Container (All)
 const content = document.getElementById("content");
 
-// ------------- Project Section (Left) -------------------------------
+// ------------- Project Section (Left) ----------------------------------------
 const projSection = document.createElement("div");
 projSection.classList.add("projSection");
 content.appendChild(projSection);
-    // Projects array, if array is not empty, display first project. --
+    // Projects array, if array is not empty, display first project. ---------
     const projects = [];
     if(projects.length !== 0) {
         console.log("Display first project");
     } 
-    // Create projects button, show form on click ---------------------
+    // Create project and add in array button ----------------------------------
     const newProjBtn = document.createElement("button");
     newProjBtn.classList.add("newProjBtn");
     newProjBtn.innerText = "New Project";
     newProjBtn.addEventListener("click", () => {
         const p = new project("New Project", "Project Description");
         projects.push(p);
-        // Display this project
-        console.log("Display project");
+        listProjects();
+        // Display project on click
     });
     projSection.appendChild(newProjBtn);
-    // ---------------------------------------------------------------- 
-    projects.forEach(project => {
-        const pBox = document.createElement("div");
-        pBox.classList.add("pBox");
-        pBox.addEventListener("click", () => {
-        // Display this project 
-        console.log("Display project");
+    // List each project in array ------------------------------------------ 
+    function listProjects() {
+        projSection.innerHTML = "";
+        projects.forEach(project => {
+            const pBox = document.createElement("div");
+            pBox.classList.add("pBox");
+            projSection.appendChild(pBox);
+            pBox.textContent = "Test";
+            pBox.addEventListener("click", () => {
+                // Display project on click
+                console.log("Clicked! Displaying project...");
+            });
         });
-    });
+        projSection.appendChild(newProjBtn);
+    }
 
 
 
-// ------------- Todo Section (Right)
+// ------------- Todo Section (Right) ------------------------------------------
 const todoSection = document.createElement("div");
 todoSection.classList.add("todoSection");
 content.appendChild(todoSection);
