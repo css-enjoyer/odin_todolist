@@ -12,17 +12,24 @@ export function displayProject(project) {
     title.textContent = project.title;
     projContent.appendChild(title);
     title.addEventListener("click", () => {
-        const text = title.innerText;
+        const oldText = title.innerText;
         const input = document.createElement("input");
+        input.style.userSelect = "none";
         input.type = "text";
-        input.value = text;
+        input.value = oldText;
 
         title.innerText = "";
         title.appendChild(input);
 
         input.addEventListener("blur", () => {
-            title.innerText = input.value;
-            project.setTitle(input.value);
+            if(input.value.trim() === "") {
+                title.innerText = "Untitled Project";
+                project.setTitle(title.innerText);
+                input.focus();
+            } else {
+                title.innerText = input.value;
+                project.setTitle(input.value);
+            }
             listProjects();
         });
         input.focus();
