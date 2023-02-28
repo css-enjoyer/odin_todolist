@@ -1,9 +1,11 @@
 console.log("projectModule.js");
 
+import { todoSection } from "./index.js";
+
 export function displayProject(project) {
     const projContent = document.createElement("div");
     projContent.classList.add("projContent");
-    content.appendChild(projContent);
+    todoSection.appendChild(projContent);
 
     const title = document.createElement("h1");
     title.classList.add("title");
@@ -15,6 +17,7 @@ export function displayProject(project) {
     title.textContent = project.desc;
     projContent.appendChild(desc);
 
+    return projContent;
 }
 
 

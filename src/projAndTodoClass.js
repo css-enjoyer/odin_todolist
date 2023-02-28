@@ -1,6 +1,5 @@
 // This module is in charge of creating the task (todo and project) objects.
-console.log("--tasks.js is running.");
-
+console.log("--projAndTodoClass.js is running.");
 
 export function todo(title, desc, dueDate, priority) {
     this.title = title;

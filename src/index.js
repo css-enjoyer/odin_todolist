@@ -2,6 +2,7 @@
 console.log("--index.js is running.");
 
 import { todo, project } from "./projAndTodoClass.js";
+import { displayProject } from "./projectModule.js";
 
 // ------------- Body Container (All)
 const content = document.getElementById("content");
@@ -23,7 +24,9 @@ content.appendChild(projSection);
         const p = new project("New Project", "Project Description");
         projects.push(p);
         listProjects();
-        // Display project on click
+
+        todoSection.innerHTML = "";
+        displayProject(p);
     });
     projSection.appendChild(newProjBtn);
     // List each project in array ------------------------------------------ 
@@ -45,7 +48,7 @@ content.appendChild(projSection);
 
 
 // ------------- Todo Section (Right) ------------------------------------------
-const todoSection = document.createElement("div");
+export const todoSection = document.createElement("div");
 todoSection.classList.add("todoSection");
 content.appendChild(todoSection);
 
