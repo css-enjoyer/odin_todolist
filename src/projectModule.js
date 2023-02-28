@@ -24,7 +24,6 @@ export function displayProject(project) {
             if(input.value.trim() === "") {
                 title.innerText = "Untitled Project";
                 project.setTitle(title.innerText);
-                input.focus();
             } else {
                 title.innerText = input.value;
                 project.setTitle(input.value);
@@ -49,18 +48,18 @@ export function displayProject(project) {
 
         input.addEventListener("blur", () => {
             if(input.value.trim() === "") {
-                desc.innerText = "Untitled Project";
+                desc.innerText = "No description..";
                 project.setDesc(desc.innerText);
-                desc.focus();
             } else {
                 desc.innerText = input.value;
                 project.setDesc(input.value);
             }
-            listProjects();
         });
         input.focus();
     });
 
+
+    
     return projContent;
 }
 
